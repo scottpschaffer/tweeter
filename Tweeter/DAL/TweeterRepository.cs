@@ -50,11 +50,14 @@ namespace Tweeter.DAL
         public void AddTweet(Tweet t)
         {
             Context.Tweets.Add(t);
+            Context.SaveChanges();
         }
 
         public void RemoveTweet(int tId)
         {
-            //Context.Tweets.(w => w.TweetId == tId);
+            var z = Context.Tweets.FirstOrDefault(w => w.TweetId == tId);
+            Context.Tweets.Remove(z);
+            Context.SaveChanges();
         }
     }
 }
