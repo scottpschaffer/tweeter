@@ -178,5 +178,25 @@ namespace Tweeter.Tests.DAL
 
             Assert.AreEqual(1, tweets.Count);
         }
+
+        public void RepoGetListOfTweets()
+        {
+            ConnectToDatastore();
+
+            Tweet x = new Tweet()
+            {
+                TweetId = 0,
+                Message = "Hello!",
+                Author = users[0]
+            };
+
+            Repo.AddTweet(x);
+
+            Assert.AreEqual(2, tweets.Count);
+
+            List<Tweet> t = Repo.GetTweets();
+
+            Assert.AreEqual(2, t.Count);
+        }
     }
 }

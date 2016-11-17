@@ -59,5 +59,10 @@ namespace Tweeter.DAL
             Context.Tweets.Remove(z);
             Context.SaveChanges();
         }
+
+        public List<Tweet> GetTweets()
+        {
+            return Context.Tweets.ToList();
+        }
     }
 }
