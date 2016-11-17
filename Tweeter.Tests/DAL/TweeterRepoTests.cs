@@ -110,5 +110,21 @@ namespace Tweeter.Tests.DAL
             // Assert
             Assert.IsNotNull(found_twit);
         }
+
+        [TestMethod]
+        public void RepoAddTweet()
+        {
+            ConnectToDatastore();
+
+            Tweet x = new Tweet();
+            x.TweetId = 0;
+            x.Message = "Hello!";
+            x.Author = users[1];
+
+            Repo.AddTweet(x);
+
+            
+
+        }
     }
 }

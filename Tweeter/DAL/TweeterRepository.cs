@@ -46,5 +46,15 @@ namespace Tweeter.DAL
             return false;
             
         }
+
+        public void AddTweet(Tweet t)
+        {
+            Context.Tweets.Add(t);
+        }
+
+        public void RemoveTweet(int tId)
+        {
+            //Context.Tweets.(w => w.TweetId == tId);
+        }
     }
 }
