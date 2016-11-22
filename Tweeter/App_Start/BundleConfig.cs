@@ -23,12 +23,11 @@ namespace Tweeter
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
 
-            bundles.Add(new ScriptBundle("~/bundles/angular").Include(
-                      "~/Scripts/angular.js",
-                      "~/Scripts/tweeting.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/app").Include(
-                      "~/Scripts/app.js"));
+                      "~/Scripts/app.js",
+                      "~/Scripts/angular.js",
+                      "~/Scripts/tweeting.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
